@@ -55,7 +55,7 @@ const config: QuartzConfig = {
       Plugin.CrawlLinks({ markdownLinkResolution: "shortest" }),
       Plugin.Latex({ renderEngine: "katex" }),
       Plugin.Description(),
-      //Plugin.Nunjucks(),
+      Plugin.Hider(),
     ],
     filters: [Plugin.RemoveDrafts()],
     emitters: [
