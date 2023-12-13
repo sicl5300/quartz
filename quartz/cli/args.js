@@ -100,4 +100,10 @@ export const BuildArgv = {
     number: true,
     describe: "how many threads to use to parse notes",
   },
+  "withDraft":
+  {
+    boolean: true,
+    default: false,
+    describe: "do not filter drafts",
+  }
 }
