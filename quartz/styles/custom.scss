@@ -1,3 +1,554 @@
 @use "./base.scss";
 
 // put your custom CSS here!
+
+
+body {
+    --image-border-color: var(--background-modifier-border);
+    --image-border-width: 1px;
+    --image-border-padding: 8px;
+    --image-border-background: var(--td);
+  }
+  
+  /*----Image Positions/Adjustments----*/
+  body {
+    --micro: 70px;
+    --tiny: 100px;
+    --small: 200px;
+    --small-med: 300px;
+    --med-small: 400px;
+    --medium: 500px;
+    --med-tall: 600px;
+    --tall: 700px;
+  }
+  
+  .popover.hover-popover {
+    --micro: 70px;
+    --tiny: 100px;
+    --small: 150px;
+    --small-med: 200px;
+    --med-small: 250px;
+    --medium: 300px;
+    --med-tall: 450px;
+    --tall: 500px;
+  }
+  
+  /*----Mobile----*/
+  @media (max-width: 500px) {
+    .theme-dark, .theme-light {
+      /*Mobile Sizes*/
+      --radius: 0px;
+      --micro: 70px;
+      --tiny: 100px;
+      --small: 150px;
+      --small-med: 200px;
+      --med-small: 250px;
+      --medium: 300px;
+      --med-tall: 450px;
+      --tall: 500px;
+    }
+  }
+  /*-Image Sizing-*/
+  /*Fit image within bounds WITHOUT stretching*/
+  img:is([width*=cover], [width*=cvr]),
+  .image-embed:is([src*="#cover"], [src*="#cvr"]),
+  span.image-embed:is([src*="#cover"], [src*="#cvr"]) img {
+    object-fit: cover;
+  }
+  
+  img[width][width]:not([width*=relative])[width*=hmicro] {
+    height: var(--micro);
+  }
+  img[width][width]:not([width*=relative])[width*=htiny] {
+    height: var(--tiny);
+  }
+  img[width][width]:not([width*=relative])[width*=hsmall] {
+    height: var(--small);
+  }
+  img[width][width]:not([width*=relative])[width*=hs-med] {
+    height: var(--small-med);
+  }
+  img[width][width]:not([width*=relative])[width*=hm-sm] {
+    height: var(--med-small);
+  }
+  img[width][width]:not([width*=relative])[width*=hmed] {
+    height: var(--medium);
+  }
+  img[width][width]:not([width*=relative])[width*=hm-tl] {
+    height: var(--med-tall);
+  }
+  img[width][width]:not([width*=relative])[width*=htall] {
+    height: var(--tall);
+  }
+  img[width][width]:not([width*=relative])[width*=hfull] {
+    height: 100%;
+  }
+  img[width][width]:not([width*=relative])[width*=wmicro] {
+    width: var(--micro);
+  }
+  img[width][width]:not([width*=relative])[width*=wtiny] {
+    width: var(--tiny);
+  }
+  img[width][width]:not([width*=relative])[width*=wsmall] {
+    width: var(--small);
+  }
+  img[width][width]:not([width*=relative])[width*=ws-med] {
+    width: var(--small-med);
+  }
+  img[width][width]:not([width*=relative])[width*=wm-sm] {
+    width: var(--med-small);
+  }
+  img[width][width]:not([width*=relative])[width*=wmed] {
+    width: var(--medium);
+  }
+  img[width][width]:not([width*=relative])[width*=wm-tl] {
+    width: var(--med-tall);
+  }
+  img[width][width]:not([width*=relative])[width*=wtall] {
+    width: var(--tall);
+  }
+  img[width][width]:not([width*=relative])[width*=wfull] {
+    width: 100%;
+  }
+  
+  .image-embed[width][width*=relative],
+  div:not(.image-embed) > img[width][width*=relative] {
+    --micro: 10%;
+    --tiny: 20%;
+    --small: 30%;
+    --small-med: 40%;
+    --med-small: 50%;
+    --medium: 60%;
+    --med-tall: 70%;
+    --tall: 85%;
+  }
+  .image-embed[width][width*=relative][width*=wmicro],
+  div:not(.image-embed) > img[width][width*=relative][width*=wmicro] {
+    width: var(--micro);
+  }
+  .image-embed[width][width*=relative][width*=wtiny],
+  div:not(.image-embed) > img[width][width*=relative][width*=wtiny] {
+    width: var(--tiny);
+  }
+  .image-embed[width][width*=relative][width*=wsmall],
+  div:not(.image-embed) > img[width][width*=relative][width*=wsmall] {
+    width: var(--small);
+  }
+  .image-embed[width][width*=relative][width*=ws-med],
+  div:not(.image-embed) > img[width][width*=relative][width*=ws-med] {
+    width: var(--small-med);
+  }
+  .image-embed[width][width*=relative][width*=wm-sm],
+  div:not(.image-embed) > img[width][width*=relative][width*=wm-sm] {
+    width: var(--med-small);
+  }
+  .image-embed[width][width*=relative][width*=wmed],
+  div:not(.image-embed) > img[width][width*=relative][width*=wmed] {
+    width: var(--medium);
+  }
+  .image-embed[width][width*=relative][width*=wm-tl],
+  div:not(.image-embed) > img[width][width*=relative][width*=wm-tl] {
+    width: var(--med-tall);
+  }
+  .image-embed[width][width*=relative][width*=wtall],
+  div:not(.image-embed) > img[width][width*=relative][width*=wtall] {
+    width: var(--tall);
+  }
+  .image-embed[width][width*=relative][width*=hmicro],
+  div:not(.image-embed) > img[width][width*=relative][width*=hmicro] {
+    width: var(--micro);
+  }
+  .image-embed[width][width*=relative][width*=htiny],
+  div:not(.image-embed) > img[width][width*=relative][width*=htiny] {
+    width: var(--tiny);
+  }
+  .image-embed[width][width*=relative][width*=hsmall],
+  div:not(.image-embed) > img[width][width*=relative][width*=hsmall] {
+    width: var(--small);
+  }
+  .image-embed[width][width*=relative][width*=hs-med],
+  div:not(.image-embed) > img[width][width*=relative][width*=hs-med] {
+    width: var(--small-med);
+  }
+  .image-embed[width][width*=relative][width*=hm-sm],
+  div:not(.image-embed) > img[width][width*=relative][width*=hm-sm] {
+    width: var(--med-small);
+  }
+  .image-embed[width][width*=relative][width*=hmed],
+  div:not(.image-embed) > img[width][width*=relative][width*=hmed] {
+    width: var(--medium);
+  }
+  .image-embed[width][width*=relative][width*=hm-tl],
+  div:not(.image-embed) > img[width][width*=relative][width*=hm-tl] {
+    width: var(--med-tall);
+  }
+  .image-embed[width][width*=relative][width*=htall],
+  div:not(.image-embed) > img[width][width*=relative][width*=htall] {
+    width: var(--tall);
+  }
+  .image-embed[width][width*=relative][width*=hfull],
+  div:not(.image-embed) > img[width][width*=relative][width*=hfull] {
+    width: 100%;
+  }
+  
+  .image-embed[width][width*=relative],
+  div:not(.image-embed) > img[width][width*=relative] {
+    display: block;
+    margin: auto;
+    max-height: 100%;
+    object-fit: cover;
+  }
+  
+  /*Height*/
+  /*Image Locations*/
+  /*Center Image*/
+  .img-adj-center.img-adj-center img,
+  img:is([width*=ctr], [width*=center]) {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .img-adj-center.img-adj-center .is-live-preview img {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  
+  /*Left & Right*/
+  :not(.is-live-preview) img:is([width*=left], [width*=locl]), :not(.is-live-preview) img[src*="#locl"] img,
+  :not(.is-live-preview) .image-embed:is([width*=left], [width*=locl]),
+  :not(.is-live-preview) .image-embed[src*="#locl"] img {
+    float: left;
+    margin-right: 2%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  :not(.is-live-preview) img:is([width*=right], [width*=locr]), :not(.is-live-preview) img[src*="#locr"] img,
+  :not(.is-live-preview) .image-embed:is([width*=right], [width*=locr]),
+  :not(.is-live-preview) .image-embed[src*="#locr"] img {
+    float: right;
+    margin-left: 2%;
+    margin-bottom: 0px;
+  }
+  
+  /*--Image Position--*/
+  img[width*="p+"], .image-embed[src*="#p+"] img {
+    object-fit: cover;
+  }
+  
+  /*Inner Image*/
+  img[width*="p+c"], .image-embed[src*="#p+c"] img {
+    object-position: center;
+  }
+  
+  img[width*="p+t"], .image-embed[src*="#p+t"] img {
+    object-position: top;
+  }
+  
+  img[width*="p+b"], .image-embed[src*="#p+b"] img {
+    object-position: bottom;
+  }
+  
+  img[width*="p+l"], .image-embed[src*="#p+l"] img {
+    object-position: left;
+  }
+  
+  img[width*="p+r"], .image-embed[src*="#p+r"] img {
+    object-position: right;
+  }
+  
+  img[width*="p+cl"], .image-embed[src*="#p+cl"] img {
+    object-position: 15%;
+  }
+  
+  img[width*="p+ccl"], .image-embed[src*="#p+ccl"] img {
+    object-position: 25%;
+  }
+  
+  img[width*="p+cr"], .image-embed[src*="#p+cr"] img {
+    object-position: 60%;
+  }
+  
+  img[width*="p+ccr"], .image-embed[src*="#p+ccr"] img {
+    object-position: 75%;
+  }
+  
+  img[width*="p+tc"], .image-embed[src*="#p+tc"] img {
+    object-position: 50% 10%;
+  }
+  
+  img[width*="p+tcc"], .image-embed[src*="#p+tcc"] img {
+    object-position: 50% 20%;
+  }
+  
+  img[width*="p+cct"], .image-embed[src*="#p+cct"] img {
+    object-position: 50% 30%;
+  }
+  
+  img[width*="p+ct"], .image-embed[src*="#p+ct"] img {
+    object-position: 50% 40%;
+  }
+  
+  img[width*="p+cb"], .image-embed[src*="#p+cb"] img {
+    object-position: 50% 60%;
+  }
+  
+  img[width*="p+ccb"], .image-embed[src*="#p+ccb"] img {
+    object-position: 50% 70%;
+  }
+  
+  img[width*="p+bc"], .image-embed[src*="#p+bc"] img {
+    object-position: 50% 80%;
+  }
+  
+  img[width*="p+bcc"], .image-embed[src*="#p+bcc"] img {
+    object-position: 50% 90%;
+  }
+  
+  /*Invert Colors*/
+  .theme-dark img[width*=invertb], .theme-dark .image-embed[src*="#invertb"] {
+    filter: invert(1) hue-rotate(180deg);
+  }
+  .theme-dark img[width*=invertbc],
+  .theme-dark .image-embed[src*="#invertbc"] {
+    filter: invert(1) hue-rotate(180deg) contrast(1.5);
+  }
+  
+  .theme-light img[width*=invertw], .theme-light .image-embed[src*="#invertw"] {
+    filter: invert(1) hue-rotate(180deg);
+  }
+  .theme-light img[width*=invertwc], .theme-light .image-embed[src*="#invertwc"] {
+    filter: invert(1) hue-rotate(180deg) contrast(1.45);
+  }
+  
+  /*Fit image within bounds WITHOUT stretching*/
+  img[width*=cover],
+  img:is([width*=cover], [width*=cvr]),
+  .image-embed:is([src*="#cover"], [src*="#cvr"]),
+  span.image-embed:is([src*="#cover"], [src*="#cvr"]) img {
+    object-fit: cover;
+  }
+  
+  /*Fix Float Issues*/
+  :is(img, .image-embed)[width*=clear],
+  .image-embed[src*="#clear"] {
+    clear: both;
+  }
+  
+  img[width*=unclr],
+  .image-embed[src*="#unclr"] {
+    clear: none !important;
+  }
+  
+  :not(.lp-img-float) .is-live-preview img:is([width*=right], [width*=locr]), :not(.lp-img-float) .is-live-preview img:is([width*=left], [width*=locl]), :not(.lp-img-float) .is-live-preview .image-embed:is([width*=right], [width*=locr]), :not(.lp-img-float) .is-live-preview .image-embed:is([width*=left], [width*=locl]) {
+    float: unset;
+  }
+  
+  img:is([width~=lp], [width~=live-preview]):is([width*=right], [width*=locr]),
+  .image-embed:is([width~=lp], [width~=live-preview]):is([width*=right], [width*=locr]) {
+    float: right !important;
+  }
+  img:is([width~=lp], [width~=live-preview]):is([width*=left], [width*=locl]),
+  .image-embed:is([width~=lp], [width~=live-preview]):is([width*=left], [width*=locl]) {
+    float: left !important;
+  }
+  
+  .clear-hr {
+    --hr-width: 100%;
+  }
+  
+  .clear-headings :is(h1, h2, h3, h4, h5, h6),
+  .clear-heading-1 h1,
+  .clear-heading-2 h2,
+  .clear-heading-3 h3,
+  .clear-heading-4 h4,
+  .clear-heading-5 h5,
+  .clear-heading-6 h6 {
+    clear: both;
+  }
+  
+  /*Banners*/
+  img[width*=banner],
+  .image-embed[width*=banner] img {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    margin-bottom: 0px;
+    clear: both;
+  }
+  
+  img[width~=banner],
+  .image-embed[width~=banner] img,
+  .image-embed[src*="#banner"] {
+    height: var(--small);
+  }
+  
+  img[width~="banner+small"],
+  .image-embed[width~="banner+small"] img,
+  .image-embed[src*="#banner+small"] {
+    height: var(--tiny);
+  }
+  
+  img[width~="banner+tall"],
+  .image-embed[width~="banner+tall"] img,
+  .image-embed[src*="#banner+tall"] {
+    height: var(--medium);
+  }
+  
+  :is(img, .internal-embed)[width*=sban],
+  :is(img, .internal-embed)[width~=sban],
+  .internal-embed[src*="#sban"] img {
+    object-fit: cover;
+    width: 100%;
+  }
+  
+  /*Portait*/
+  img[width*=portrait],
+  .image-embed[width*=portrait] img {
+    object-fit: cover;
+  }
+  
+  img[width~=portrait],
+  .image-embed[width~=portrait] img,
+  .image-embed[src~="#portrait"] {
+    height: var(--small-med);
+    width: 40%;
+  }
+  
+  img[width~="portrait+small"],
+  .image-embed[width~="portrait+small"] img,
+  .image-embed[src~="#portrait+small"] {
+    height: var(--small);
+    width: 25%;
+  }
+  
+  img[width~="portrait+tall"],
+  .image-embed[width~="portrait+tall"] img,
+  .image-embed[src~="#portrait+tall"] {
+    height: 500px;
+    width: 50%;
+  }
+  
+  /*Profile*/
+  img[width*=profile],
+  .image-embed[width*=profile] img {
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  img[width~=profile],
+  .image-embed[width~=profile] img,
+  .image-embed[src*="#profile"] {
+    height: var(--tiny);
+    width: var(--tiny);
+  }
+  
+  img[width~="profile+medium"],
+  .image-embed[width~="profile+medium"] img,
+  .image-embed[src*="#profile+medium"] {
+    height: var(--small);
+    width: var(--small);
+  }
+  
+  img[width~="profile+tall"],
+  .image-embed[width~="profile+tall"] img,
+  .image-embed[src*="#profile+tall"] {
+    height: var(--medium);
+    width: var(--medium);
+  }
+  
+  img[width~=sprf] {
+    object-fit: cover;
+    border-radius: 100%;
+  }
+  
+  /*Image Shapes*/
+  img[width*=circle] {
+    border-radius: 50%;
+  }
+  
+  img[width~=square],
+  .image-embed[width~=square] img {
+    border-radius: 0;
+  }
+  
+  img[width~=border],
+  .internal-embed[width~=border] img {
+    border: var(--image-border-width) solid var(--image-border-color);
+    padding: var(--image-border-padding);
+    background: var(--image-border-background);
+  }
+  
+  .image-captions .image-embed::after,
+  .image-embed[src*="#cap"]::after {
+    content: attr(width);
+    color: var(--inactive, var(--faint-text));
+    display: block;
+    text-align: center;
+  }
+  
+  .mobile-image-viewer img[width][width][width] {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+  
+  /*@settings
+  name: Image Adjustments
+  id: image-adjustments
+  settings:
+      - 
+          id: info-text-SlRvb-img-adj
+          type: info-text
+          title: Image Adjustments by SlRvb
+          description: "[Image Adjustments Snippet How-To Guide](https://publish.obsidian.md/slrvb-docs/ITS+Theme/Image+Adjustments)"
+          markdown: true
+      -
+          title: Clear Images
+          description: Push image under/over headings or horizontal lines
+          id: img-adj-clears
+          type: heading
+          level: 1
+          collapsed: true
+      -
+          title: Horizontal Lines
+          description: Push image under/over any horizontal lines
+          id: clear-hr
+          type: class-toggle
+      -
+          title: Headings
+          description: Push image under/over all headings 1-6
+          id: clear-headings
+          type: class-toggle
+      -
+          title: Heading Specific
+          description: Push image under/over some headings and not others
+          id: img-adj-clears-headings
+          type: heading
+          level: 2
+          collapsed: true
+      -
+          title: Header 1
+          id: clear-heading-1
+          type: class-toggle
+      -
+          title: Header 2
+          id: clear-heading-2
+          type: class-toggle
+      -
+          title: Header 3
+          id: clear-heading-3
+          type: class-toggle
+      -
+          title: Header 4
+          id: clear-heading-4
+          type: class-toggle
+      -
+          title: Header 5
+          id: clear-heading-5
+          type: class-toggle
+      -
+          title: Header 6
+          id: clear-heading-6
+          type: class-toggle
+  */

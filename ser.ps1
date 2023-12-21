@@ -1,0 +1,1 @@
+pnpm exec .\quartz\bootstrap-cli.mjs build --serve --withDraft

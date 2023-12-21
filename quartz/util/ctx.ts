@@ -10,6 +10,7 @@ export interface Argv {
   wsPort: number
   remoteDevHost?: string
   concurrency?: number
+  withDraft: boolean
 }
 
 export interface BuildCtx {

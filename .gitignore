@@ -9,3 +9,5 @@ tsconfig.tsbuildinfo
 private/
 .replit
 replit.nix
+sync.ffs_db
+pnpm-lock.yaml
